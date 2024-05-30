@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs of the Church</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        header {
+            background-color: #4682b4;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        header .icons img {
+            height: 30px;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4682b4;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #333;
+        }
+
+        .welcome-note {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #song-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            padding: 20px;
+        }
+
+        .song-tile {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .song-tile:hover {
+            transform: scale(1.05);
+        }
+
+        .song-thumbnail {
+            max-width: 80px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .song-title {
+            margin-top: 10px;
+            color: #660000;
+            text-decoration: none;
+        }
+
+        .song-tile a {
+            text-decoration: none; /* Added to remove underline */
+        }
+
+        #search-box {
+            width: calc(100% - 40px);
+            margin: 20px auto;
+            padding: 10px;
+            box-sizing: border-box;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        @media (min-width: 600px) {
+            .song-thumbnail {
+                max-width: 100px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .song-thumbnail {
+                max-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://scontent.fabb1-3.fna.fbcdn.net/v/t39.30808-6/316303021_8865944376764114_1466872125643868495_n.jpg?_nc_cat=105&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeG2hW3sI8pZnMABgpNujFTjU1XQncy_aNNTVdCdzL9o014DZk-bI6_WtEZOx1suoVYWFSWYdnEg8x2IAD711aks&_nc_ohc=HyWvCPXxzc8Q7kNvgFz6307&_nc_zt=23&_nc_ht=scontent.fabb1-3.fna&oh=00_AYCxhwS30M6qXqa3egT9a9M4-WLQTsL0qCdci8WnYlwgVA&oe=665CFBE7" alt="Logo">
+    <div class="icons">
+        <a href="mailto:marshall12340@gmail.com"><img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Email"></a>
+        <a href="https://wa.me/+2348102341648" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png" alt="WhatsApp"></a>
+        <a href="https://www.facebook.com/marshall294" target="_blank"><img src="https://static-00.iconduck.com/assets.00/facebook-icon-512x511-ircc9ves.png" alt="Facebook"></a>
+    </div>
+</header>
+
+<h1>Songs of the Church</h1>
+
+<div class="welcome-note">
+    <p>Welcome to our digital songbook! Use the search box below to find your favorite songs by number or name.</p>
+</div>
+
+<!-- Search Box -->
+<input type="text" id="search-box" onkeyup="searchSongs()" placeholder="Search by song's number or song's title">
+
+<!-- Song Thumbnails -->
+<div id="song-container">
+    <!-- Replace the URLs with the actual paths to your PDF files -->
+    <div class="song-tile">
+        <a href="0 A Hill Called Mount Calvary.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 0" class="song-thumbnail">
+            <p class="song-title">0 A Hill Called Mount Calvary</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000 Battle Hymn of the Republic.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000 Battle Hymn of the Republic</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="00AWhat will you do.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 00" class="song-thumbnail">
+            <p class="song-title">00AWhat will you do</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="01A Tell Them of Jesus.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 01A" class="song-thumbnail">
+            <p class="song-title">01A Tell Them of Jesus</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="001After The Midnight.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 001" class="song-thumbnail">
+            <p class="song-title">001After The Midnight</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="002 A Wonderful Savior.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 006" class="song-thumbnail">
+            <p class="song-title">002 A Wonderful Savior</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="003 A Mighty Fortress.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 003" class="song-thumbnail">
+            <p class="song-title">003 A Mighty Fortress</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="004 Asleep In Jesus.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 004" class="song-thumbnail">
+            <p class="song-title">004 Asleep In Jesus</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="005 An Empty Mansion.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 005" class="song-thumbnail">
+            <p class="song-title">005 An Empty Mansion</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="006 Alas and Did my Savior Bleed.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 006" class="song-thumbnail">
+            <p class="song-title">006 Alas and Did my Savior Bleed</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="007 All Hail the Power of Jesus Name-Holden.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 007" class="song-thumbnail">
+            <p class="song-title">007 All Hail the Power of Jesus Name-Holden</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="008 A Charge to Keep.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 008" class="song-thumbnail">
+            <p class="song-title">008 A Charge to Keep</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="009 A Beautiful Life.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 009" class="song-thumbnail">
+            <p class="song-title">009 A Beautiful Life</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="010 I Surrender All.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 010" class="song-thumbnail">
+            <p class="song-title">010 I Surrender All</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="011 A Beautiful Prayer.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 011" class="song-thumbnail">
+            <p class="song-title">011 A Beautiful Prayer</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="012 Amazing Grace-fsocppt.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 012" class="song-thumbnail">
+            <p class="song-title">012 Amazing Grace</p>
+        </a>
+    </div>
+
+    <div class="song-tile">
+        <a href="013 A Blessing in Prayer.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 013" class="song-thumbnail">
+            <p class="song-title">013 A Blessing in Prayer</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="014 A New Creature-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 014" class="song-thumbnail">
+            <p class="song-title">014 A New Creature</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="015 To God Be the Glory-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 015" class="song-thumbnail">
+            <p class="song-title">015 To God Be the Glory</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="016 Beyond the Gates-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 016" class="song-thumbnail">
+            <p class="song-title">016 Beyond the Gates</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="017 Above The Bright Blue-fsoc A Charge to Keep.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 017" class="song-thumbnail">
+            <p class="song-title">017 Above The Bright Blue</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="018 A Soul Winner For Jesus-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 018" class="song-thumbnail">
+            <p class="song-title">018 A Soul Winner For Jesus</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="019 Abide with Me-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 019" class="song-thumbnail">
+            <p class="song-title">019 Abide with Me</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="020 Again the Lord of Light-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 020" class="song-thumbnail">
+            <p class="song-title">020 Again the Lord of Light-fsoc</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="021 Almost Persuaded-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">021 Almost Persuaded</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="022 Angels are Singing-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">022 Angels are Singing</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="023 Angry Words-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">023 Angry Words</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="024 Anywhere is Home-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">024 Anywhere is Home</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="025 Anywhere with Jesus-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">025 Anywhere with Jesus</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="026 All the Way my Savior Leads-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">026 All the Way my Savior Leads</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="027 As The Life Of A Flower-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">027 As The Life Of A Flower</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="028 Crossing the Bar-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">028 Crossing the Bar</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="029 Beautiful-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">029 Beautiful</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="030 At the Crossroads-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">030 At the Crossroads</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="031 Be Not Dismayed Whate_er betide-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">031 Be Not Dismayed Whate_er betide</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="031 God Will Take Care Of You-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">031 God Will Take Care Of You</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="032 Be With Me Lord-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">032 Be With Me Lord</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="033 Awake and Sing-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">033 Awake and Sing</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="034 Abide with Me Tis Eventide-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">034 Abide with Me Tis Eventide</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="035 All People That on Earth Do Dwell-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">035 All People That on Earth Do Dwell</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="036 Behold a Stranger-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">036 Behold a Stranger</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="037 Beautiful Isle of Somewhere-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">037 Beautiful Isle of Somewhere</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="038 Beneath the Cross of Jesus-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">038 Beneath the Cross of Jesus</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="039 The Beautiful Sunrise-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">039 The Beautiful Sunrise</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="39B Into My Heart-SOC-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">39B Into My Heart-SOC</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="040 Cling to His Hand-fsoc.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">040 Cling to His Hand-fsoc</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <div class="song-tile">
+        <a href="000.pdf" target="_blank">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51mn4IJYIrL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="Song 000" class="song-thumbnail">
+            <p class="song-title">000</p>
+        </a>
+    </div>
+    <!-- Repeat the structure for other songs -->
+
+    <!-- Add more song tiles as needed -->
+</div>
+
+<script>
+    function searchSongs() {
+        // Declare variables
+        var input, filter, songContainer, songTiles, song, txtValue;
+        input = document.getElementById('search-box');
+        filter = input.value.toUpperCase();
+        songContainer = document.getElementById('song-container');
+        songTiles = songContainer.getElementsByClassName('song-tile');
+
+        // Loop through all songs, hide those that don't match the search query
+        for (var i = 0; i < songTiles.length; i++) {
+            song = songTiles[i].getElementsByTagName('p')[0];
+            txtValue = song.textContent || song.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                songTiles[i].style.display = '';
+            } else {
+                songTiles[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
